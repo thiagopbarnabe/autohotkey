@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<!-- saved from url=(0048)https://autohotkey.com/boards/viewtopic.php?t=50 -->
+<html dir="ltr" lang="en-gb"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setup Notepad++ for AutoHotkey - AutoHotkey Community</title>
+<link rel="alternate" type="application/atom+xml" title="Feed - AutoHotkey Community" href="https://autohotkey.com/boards/feed.php"> <link rel="alternate" type="application/atom+xml" title="Feed - News" href="https://autohotkey.com/boards/feed.php?mode=news"> <link rel="alternate" type="application/atom+xml" title="Feed - All forums" href="https://autohotkey.com/boards/feed.php?mode=forums"> <link rel="alternate" type="application/atom+xml" title="Feed - New Topics" href="https://autohotkey.com/boards/feed.php?mode=topics"> <link rel="alternate" type="application/atom+xml" title="Feed - Active Topics" href="https://autohotkey.com/boards/feed.php?mode=topics_active"> <link rel="alternate" type="application/atom+xml" title="Feed - Forum - Editors" href="https://autohotkey.com/boards/feed.php?f=60"> <link rel="alternate" type="application/atom+xml" title="Feed - Topic - Setup Notepad++ for AutoHotkey" href="https://autohotkey.com/boards/feed.php?f=60&amp;t=50">
+<link rel="canonical" href="https://autohotkey.com/boards/viewtopic.php?t=50">
+<link href="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/print.css" rel="stylesheet" type="text/css" media="print" title="printonly">
+<link href="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/glyphicons.css" rel="stylesheet" type="text/css">
+<link href="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/stylesheet.css" rel="stylesheet" type="text/css" media="screen, projection">
+<!--[if lte IE 9]>
+	<link href="./styles/simplicity/theme/tweaks.css?assets_version=98" rel="stylesheet" type="text/css" media="screen, projection" />
+<![endif]-->
+<style type="text/css">
+
+/* <![CDATA[ */
+
+	.codebox_plus code
+
+	{
+
+		color: black;
+
+		max-height: none;
+
+		-moz-tab-size: 4;
+
+		-o-tab-size: 4;
+
+		tab-size: 4;
+
+	}
+
+	.codebox_plus .collapsed
+
+	{
+
+		max-height: 187px; /* currently 11 lines */
+
+	}
+
+	.codebox_plus_about
+
+	{
+
+		float: right;
+
+		font-weight: normal;
+
+		text-transform: none;
+
+	}
+
+.kw1 { color: #480048; } /* reserved */
+
+.kw2 { color: #CF00CF; } /* built-in vars */
+
+.kw3 { color: #00509F; } /* commands */
+
+.kw4 { color: #0F707F; } /* functions */
+
+.kw5 { color: #F04020;  } /* directives */
+
+.kw6 { color: #A92014; } /* hotkeys */
+
+.kw7 { color: #004080; } /* gui commands */
+
+.kw8 { color: #004080; } /* gui controls */
+
+.coMULTI, .co1 { color: #808080; } /* comments */
+
+.es0 { color: #FF8000; } /* escape chars */
+
+.br0 { color: brown; } /* brackets */
+
+.st0, .st_h { color: #008000; } /* strings */
+
+.nu0 { color: #2F4F7F; } /* numbers */
+
+.sy0 { color: #7F200F; } /* symbols */
+
+.re0 { color: #821747; } /* %variables% */
+
+.re1 { color: #D56000; } /* hotstrings */
+
+.re2 { color: #DD0000; } /* labels */
+/* ]]> */
+
+</style>
+<script type="text/javascript">
+
+/* <![CDATA[ */
+
+	function codebox_plus_toggle(a, expand, collapse)
+
+	{
+
+		var e = a.parentNode.parentNode.getElementsByTagName('code')[0];
+
+		var text = e.textContent ? 'textContent' : 'innerText';
+
+		
+
+		if (e.className == 'collapsed')
+
+		{
+
+			e.className = '';
+
+			a[text] = collapse;
+
+		}
+
+		else
+
+		{
+
+			e.className = 'collapsed';
+
+			a[text] = expand;
+
+		}
+
+	}
+
+
+
+	function codebox_plus_select(a)
+
+	{
+
+		var e = a.parentNode.parentNode.getElementsByTagName('code')[0];
+
+
+
+		// Not IE and IE9+
+
+		if (window.getSelection)
+
+		{
+
+			var s = window.getSelection();
+
+			// Safari
+
+			if (s.setBaseAndExtent && false)
+
+			{
+
+				s.setBaseAndExtent(e, 0, e, e.innerText.length - 1);
+
+			}
+
+			// Firefox and Opera
+
+			else
+
+			{
+
+				// workaround for bug # 42885
+
+				if (window.opera && e.innerHTML.substring(e.innerHTML.length - 4) == '<BR>')
+
+				{
+
+					e.innerHTML = e.innerHTML + '&nbsp;';
+
+				}
+
+
+
+				var r = document.createRange();
+
+				r.selectNodeContents(e);
+
+				s.removeAllRanges();
+
+				s.addRange(r);
+
+			}
+
+		}
+
+		// Some older browsers
+
+		else if (document.getSelection)
+
+		{
+
+			var s = document.getSelection();
+
+			var r = document.createRange();
+
+			r.selectNodeContents(e);
+
+			s.removeAllRanges();
+
+			s.addRange(r);
+
+		}
+
+		// IE
+
+		else if (document.selection)
+
+		{
+
+			var r = document.body.createTextRange();
+
+			r.moveToElementText(e);
+
+			r.select();
+
+		}
+
+	}
+
+/* ]]> */
+
+</script>
+<link href="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/buttons.css" rel="stylesheet" type="text/css" media="screen">
+<link href="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/lightbox.css" rel="stylesheet" type="text/css" media="screen">
+<style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+<body id="phpbb" class="notouch section-viewtopic ltr hasjs can-transform" data-online-text="Online" style="">
+<a id="top" class="anchor" accesskey="t"></a>
+<div id="page-header" class="page-width">
+<div class="headerbar" role="banner">
+<div class="inner">
+<div id="site-description">
+<a id="logo" class="logo" href="https://autohotkey.com/" title="Home"><img src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/logo.png" data-src-hd="./styles/simplicity/theme/images/logo_hd.png"></a>
+<p class="sitename">AutoHotkey Community</p>
+<p>Let's help each other out</p>
+<p class="skiplink"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#start_here">Skip to content</a></p>
+</div>
+</div>
+</div>
+<div class="navbar tabbed not-static" role="navigation">
+<div class="static-nav-dummy inner" style="display: none; height: 30px;"></div><div class="inner page-width"><div class="static-inner">
+<div class="nav-tabs" data-current-page="viewtopic">
+<ul class="leftside">
+<li class="tab home responsive-cloned-item" data-responsive-class="small-icon icon-home" title="Home" data-clone-index="0">
+<a class="nav-link" href="https://autohotkey.com/" data-navbar-reference="home">Home</a>
+</li>
+<li id="quick-links" class="tab responsive-menu dropdown-container" title="Quick links">
+<a href="https://autohotkey.com/boards/viewtopic.php?t=50#" class="nav-link dropdown-trigger dropdown-toggle">Quick links</a>
+<div class="dropdown hidden">
+<div class="pointer"><div class="pointer-inner"></div></div>
+<ul class="dropdown-contents" role="menu">
+<li class="separator"></li>
+<li class="small-icon icon-search-unanswered"><a href="https://autohotkey.com/boards/search.php?search_id=unanswered&amp;sid=4f3ca0904763fcc945879057ce206f7e" role="menuitem">Unanswered topics</a></li>
+<li class="small-icon icon-search-active"><a href="https://autohotkey.com/boards/search.php?search_id=active_topics&amp;sid=4f3ca0904763fcc945879057ce206f7e" role="menuitem">Active topics</a></li>
+<li class="separator"></li>
+<li class="small-icon icon-search"><a href="https://autohotkey.com/boards/search.php?sid=4f3ca0904763fcc945879057ce206f7e" role="menuitem">Search</a></li>
+<li class="separator" style="display: none;"></li>
+<li class="small-icon icon-home responsive-index-0 responsive-clone" data-responsive-class="small-icon icon-home" title="Home" style="display: none;">
+<a class="" href="https://autohotkey.com/" data-navbar-reference="home">Home</a>
+</li><li class="small-icon icon-chat responsive-index-3 responsive-clone" data-responsive-class="small-icon icon-chat" title="IRC Channel" style="display: none;">
+<a class="" target="_self" href="https://autohotkey.com/boards/viewtopic.php?f=5&amp;t=59"><b>IRC Channel</b></a>
+</li><li class="small-icon icon-book-open responsive-index-4 responsive-clone" data-responsive-class="small-icon icon-book-open" title="Commands" style="display: none;">
+<a class="" target="_blank" href="https://autohotkey.com/docs/commands/index.htm"><b>Commands</b></a>
+</li><li class="small-icon icon-circle-info responsive-index-5 responsive-clone" data-responsive-class="small-icon icon-circle-info" title="Tutorial" style="display: none;">
+<a class="" target="_blank" href="https://autohotkey.com/docs/Tutorial.htm"><b>Tutorial</b></a>
+</li><li class="small-icon icon-download responsive-index-6 responsive-clone" data-responsive-class="small-icon icon-download" title="Download - 1.1.26.01" style="display: none;">
+<a class="" target="_blank" href="https://autohotkey.com/download"><b>Download</b>&nbsp;-&nbsp;1.1.26.01</a>
+</li><li class="small-icon icon-faq responsive-index-7 responsive-clone" data-select-match="faq" data-responsive-class="small-icon icon-faq" title="FAQ" style="display: none;">
+<a class="" href="https://autohotkey.com/boards/faq.php?sid=4f3ca0904763fcc945879057ce206f7e" rel="help" title="Frequently Asked Questions" role="menuitem">FAQ</a>
+</li></ul>
+</div>
+</li>
+<li class="tab forums selected" data-responsive-class="small-icon icon-forums" title="Forums" data-responsive-index="-1">
+<a class="nav-link" href="https://autohotkey.com/boards/index.php?sid=4f3ca0904763fcc945879057ce206f7e">Forums</a>
+</li>
+<li class="tab members dropdown-container" data-select-match="member" data-responsive-class="small-icon icon-members" title="Members" data-responsive-index="-1">
+<a class="nav-link dropdown-trigger dropdown-toggle" href="https://autohotkey.com/boards/memberlist.php?sid=4f3ca0904763fcc945879057ce206f7e">Members</a>
+<div class="dropdown hidden">
+<div class="pointer"><div class="pointer-inner"></div></div>
+<ul class="dropdown-contents" role="menu">
+<li class="small-icon icon-team"><a href="https://autohotkey.com/boards/memberlist.php?mode=team&amp;sid=4f3ca0904763fcc945879057ce206f7e" role="menuitem">The team</a></li> </ul>
+</div>
+</li>
+</ul>
+<ul class="rightside">
+<li class="tab responsive-cloned-item" data-responsive-class="small-icon icon-chat" title="IRC Channel" data-clone-index="3">
+<a class="nav-link" target="_self" href="https://autohotkey.com/boards/viewtopic.php?f=5&amp;t=59"><b>IRC Channel</b></a>
+</li>
+<li class="tab responsive-cloned-item" data-responsive-class="small-icon icon-book-open" title="Commands" data-clone-index="4">
+<a class="nav-link" target="_blank" href="https://autohotkey.com/docs/commands/index.htm"><b>Commands</b></a>
+</li>
+<li class="tab responsive-cloned-item" data-responsive-class="small-icon icon-circle-info" title="Tutorial" data-clone-index="5">
+<a class="nav-link" target="_blank" href="https://autohotkey.com/docs/Tutorial.htm"><b>Tutorial</b></a>
+</li>
+<li class="tab responsive-cloned-item" data-responsive-class="small-icon icon-download" title="Download - 1.1.26.01" data-clone-index="6">
+<a class="nav-link" target="_blank" href="https://autohotkey.com/download"><b>Download</b>&nbsp;-&nbsp;1.1.26.01</a>
+</li>
+<li class="tab faq responsive-cloned-item" data-select-match="faq" data-responsive-class="small-icon icon-faq" title="FAQ" data-clone-index="7">
+<a class="nav-link" href="https://autohotkey.com/boards/faq.php?sid=4f3ca0904763fcc945879057ce206f7e" rel="help" title="Frequently Asked Questions" role="menuitem">FAQ</a>
+</li>
+<li class="tab login" data-skip-responsive="true" data-select-match="login" title="Login" data-responsive-index="-1"><a class="nav-link" href="https://autohotkey.com/boards/ucp.php?mode=login&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Login" accesskey="x" role="menuitem">Login</a></li>
+<li class="tab register" data-skip-responsive="true" data-select-match="register" title="Register" data-responsive-index="-1"><a class="nav-link" href="https://autohotkey.com/boards/ucp.php?mode=register&amp;sid=4f3ca0904763fcc945879057ce206f7e" role="menuitem">Register</a></li>
+</ul>
+</div>
+</div></div>
+</div>
+<div class="navbar secondary with-search">
+<ul role="menubar"><li class="responsive-menu dropdown-container" style="display: none;"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#" class="dropdown-trigger dropdown-toggle">...</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"><li class="small-icon icon-search responsive-hide responsive-index-0 responsive-clone" style="display: none;"><a href="https://autohotkey.com/boards/search.php?sid=4f3ca0904763fcc945879057ce206f7e">Search</a></li><li class="small-icon icon-login responsive-index-1 responsive-clone" style="display: none;"><a href="https://autohotkey.com/boards/ucp.php?mode=login&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Login">Login</a></li><li class="small-icon icon-register responsive-index-2 responsive-clone" style="display: none;"><a href="https://autohotkey.com/boards/ucp.php?mode=register&amp;sid=4f3ca0904763fcc945879057ce206f7e">Register</a></li></ul></div></li>
+<li class="small-icon icon-search responsive-hide responsive-cloned-item" data-clone-index="0"><a href="https://autohotkey.com/boards/search.php?sid=4f3ca0904763fcc945879057ce206f7e">Search</a></li>
+<li class="small-icon icon-login responsive-cloned-item" data-clone-index="1"><a href="https://autohotkey.com/boards/ucp.php?mode=login&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Login">Login</a></li>
+<li class="small-icon icon-register responsive-cloned-item" data-clone-index="2"><a href="https://autohotkey.com/boards/ucp.php?mode=register&amp;sid=4f3ca0904763fcc945879057ce206f7e">Register</a></li>
+<li class="search-box not-responsive" data-responsive-index="-1"> <div id="search-box" class="search-box search-header" role="search">
+<form action="https://autohotkey.com/boards/search.php?sid=4f3ca0904763fcc945879057ce206f7e" method="get" id="search">
+<fieldset>
+<input name="keywords" id="keywords" type="search" maxlength="128" title="Search for keywords" class="inputbox search tiny" size="20" value="" placeholder="Search…">
+<button class="button icon-button search-icon" type="submit" title="Search">Search</button>
+<a href="https://autohotkey.com/boards/search.php?sid=4f3ca0904763fcc945879057ce206f7e" class="button icon-button search-adv-icon" title="Advanced search">Advanced search</a>
+<input type="hidden" name="sid" value="4f3ca0904763fcc945879057ce206f7e">
+</fieldset>
+</form>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="wrap" class="page-width">
+<a id="start_here" class="anchor"></a>
+<div id="page-body" role="main">
+<div class="navbar nav-breadcrumbs">
+<ul id="nav-breadcrumbs" class="linklist navlinks" role="menubar">
+<li class="small-icon icon-home breadcrumbs" style="max-width: 1347px;">
+<span class="crumb" style="display: none;"><a href="https://autohotkey.com/" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-navbar-reference="home" title="Home">Home</a></span> <span class="crumb"><a href="https://autohotkey.com/boards/index.php?sid=4f3ca0904763fcc945879057ce206f7e" accesskey="h" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-navbar-reference="index" title="Board index">Board index</a></span>
+<span class="crumb"><a href="https://autohotkey.com/boards/viewforum.php?f=4&amp;sid=4f3ca0904763fcc945879057ce206f7e" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-forum-id="4" title="AutoHotkey">AutoHotkey</a></span>
+<span class="crumb"><a href="https://autohotkey.com/boards/viewforum.php?f=60&amp;sid=4f3ca0904763fcc945879057ce206f7e" itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" data-forum-id="60" title="Editors">Editors</a></span>
+</li>
+<li class="rightside responsive-search" style="display: none;"><a href="https://autohotkey.com/boards/search.php?sid=4f3ca0904763fcc945879057ce206f7e" title="View the advanced search options" role="menuitem">Search</a></li>
+<li class="rightside dropdown-container icon-only">
+<a href="https://autohotkey.com/boards/viewtopic.php?t=50#" class="dropdown-trigger time dropdown-toggle" title="It is currently 17 Oct 2017, 13:06"><i class="fa fa-clock-o"></i></a>
+<div class="dropdown hidden">
+<div class="pointer"><div class="pointer-inner"></div></div>
+<ul class="dropdown-contents">
+<li>It is currently 17 Oct 2017, 13:06</li>
+<li>All times are <abbr title="UTC-5">UTC-05:00</abbr></li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h2 class="topic-title"><a href="https://autohotkey.com/boards/viewtopic.php?f=60&amp;t=50&amp;sid=4f3ca0904763fcc945879057ce206f7e">Setup Notepad++ for AutoHotkey</a></h2>
+
+<div style="display: none !important;">Discuss features, issues, about Editors for AHK<br></div>
+<div class="action-bar top">
+<div class="buttons">
+<a href="https://autohotkey.com/boards/posting.php?mode=reply&amp;f=60&amp;t=50&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="button icon-button reply-icon" title="Post a reply">Post <strong>Reply</strong></a>
+</div>
+<div class="dropdown-container dropdown-button-control topic-tools">
+<span title="Topic tools" class="button icon-button tools-icon dropdown-trigger dropdown-select dropdown-toggle"></span>
+<div class="dropdown hidden">
+<div class="pointer"><div class="pointer-inner"></div></div>
+<ul class="dropdown-contents">
+<li class="small-icon icon-sendemail"><a href="https://autohotkey.com/boards/memberlist.php?mode=email&amp;t=50&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Email topic">Email topic</a></li> <li class="small-icon icon-print"><a href="https://autohotkey.com/boards/viewtopic.php?f=60&amp;t=50&amp;sid=4f3ca0904763fcc945879057ce206f7e&amp;view=print" title="Print view" accesskey="p">Print view</a></li> </ul>
+</div>
+</div>
+<div class="search-box" role="search">
+<form method="get" id="topic-search" action="https://autohotkey.com/boards/search.php?sid=4f3ca0904763fcc945879057ce206f7e">
+<fieldset>
+<input class="inputbox search tiny" type="search" name="keywords" id="search_keywords" size="20" placeholder="Search this topic…">
+<button class="button icon-button search-icon" type="submit" title="Search">Search</button>
+<a href="https://autohotkey.com/boards/search.php?sid=4f3ca0904763fcc945879057ce206f7e" class="button icon-button search-adv-icon" title="Advanced search">Advanced search</a>
+<input type="hidden" name="t" value="50">
+<input type="hidden" name="sf" value="msgonly">
+<input type="hidden" name="sid" value="4f3ca0904763fcc945879057ce206f7e">
+</fieldset>
+</form>
+</div>
+<div class="pagination">
+101 posts
+<ul>
+<li class="active"><span>1</span></li>
+<li><a href="https://autohotkey.com/boards/viewtopic.php?f=60&amp;t=50&amp;sid=4f3ca0904763fcc945879057ce206f7e&amp;start=20" role="button">2</a></li>
+<li><a href="https://autohotkey.com/boards/viewtopic.php?f=60&amp;t=50&amp;sid=4f3ca0904763fcc945879057ce206f7e&amp;start=40" role="button">3</a></li>
+<li><a href="https://autohotkey.com/boards/viewtopic.php?f=60&amp;t=50&amp;sid=4f3ca0904763fcc945879057ce206f7e&amp;start=60" role="button">4</a></li>
+<li><a href="https://autohotkey.com/boards/viewtopic.php?f=60&amp;t=50&amp;sid=4f3ca0904763fcc945879057ce206f7e&amp;start=80" role="button">5</a></li>
+<li><a href="https://autohotkey.com/boards/viewtopic.php?f=60&amp;t=50&amp;sid=4f3ca0904763fcc945879057ce206f7e&amp;start=100" role="button">6</a></li>
+<li class="next"><a href="https://autohotkey.com/boards/viewtopic.php?f=60&amp;t=50&amp;sid=4f3ca0904763fcc945879057ce206f7e&amp;start=20" rel="next" role="button">Next</a></li>
+</ul>
+</div>
+</div>
+<div id="p196" class="post has-profile bg2">
+<div class="inner">
+<dl class="postprofile resized" id="profile196" style="z-index: 28; min-height: 1653px;">
+<dt class="no-profile-rank has-avatar">
+<div class="avatar-container">
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=75&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="avatar"><img class="avatar" src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/file.php" width="100" height="100" alt="User avatar"></a>
+</div>
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=75&amp;sid=4f3ca0904763fcc945879057ce206f7e" style="color: #00AA00;" class="username-coloured">jNizM</a>
+</dt>
+<dd class="profile-posts"><strong>Posts:</strong> <a href="https://autohotkey.com/boards/search.php?author_id=75&amp;sr=posts&amp;sid=4f3ca0904763fcc945879057ce206f7e">2273</a></dd>
+<dd class="profile-joined"><strong>Joined:</strong> 30 Sep 2013</dd>
+<dd class="profile-custom-field profile-github"><strong>GitHub:</strong> jNizM</dd>
+<dd class="profile-contact">
+<strong>Contact:</strong>
+<div class="dropdown-container dropdown-right dropdown-down">
+<a href="https://autohotkey.com/boards/viewtopic.php?t=50#" class="dropdown-trigger dropdown-toggle"><span class="imageset icon_contact" title="Contact jNizM">Contact jNizM</span></a>
+<div class="dropdown hidden">
+<div class="pointer"><div class="pointer-inner"></div></div>
+<div class="dropdown-contents contact-icons">
+<div>
+<a href="https://github.com/jNizM" title="Website" class="last-cell">
+<span class="contact-icon phpbb_website-icon">Website</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+<div class="postbody">
+<div id="post_content196">
+<h3 class="first" style="display: none;"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#p196">Setup Notepad++ for AutoHotkey</a></h3>
+<ul class="post-buttons">
+<li>
+<a href="https://autohotkey.com/boards/posting.php?mode=quote&amp;f=60&amp;p=196&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+</li>
+<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+<p class="author"><a href="https://autohotkey.com/boards/viewtopic.php?p=196&amp;sid=4f3ca0904763fcc945879057ce206f7e#p196">01 Oct 2013, 04:15</a></p>
+<div class="content"><center><strong><span style="color: #168013"><span style="font-size: 200%; line-height: normal"><a href="https://github.com/jNizM/ahk_notepad-plus-plus" class="postlink">Setup Notepad++ for AutoHotkey</a></span></span></strong></center><br><center>(tested up to Notepad++ v7.3.3 - x64)</center><br><br><br><span style="font-size: 150%; line-height: normal"><strong><span style="color: #3FB137">Syntax-Highlighting</span></strong></span><hr>1. Download <code style="font-family: Consolas, Monaco, &#39;Andale Mono&#39;, &#39;Courier New&#39;, Courier, monospace; font-size: 12px; border: 1px dotted #9A9B9D; padding: 0 3px; border-radius: 4px">userDefineLang_AHK.xml</code> as raw (Right-click and choosing save as target...)<br>2. Save it to the right location <code style="font-family: Consolas, Monaco, &#39;Andale Mono&#39;, &#39;Courier New&#39;, Courier, monospace; font-size: 12px; border: 1px dotted #9A9B9D; padding: 0 3px; border-radius: 4px">C:\Program Files\Notepad++\userDefineLang_AHK.xml</code> (on 32-Bit: <code style="font-family: Consolas, Monaco, &#39;Andale Mono&#39;, &#39;Courier New&#39;, Courier, monospace; font-size: 12px; border: 1px dotted #9A9B9D; padding: 0 3px; border-radius: 4px">C:\Program Files (x86)\Notepad++\userDefineLang_AHK.xml</code>)<br>3. Start Notepad++ and click on Menu <code style="font-family: Consolas, Monaco, &#39;Andale Mono&#39;, &#39;Courier New&#39;, Courier, monospace; font-size: 12px; border: 1px dotted #9A9B9D; padding: 0 3px; border-radius: 4px">Language -&gt; Define your language</code><br>4. <code style="font-family: Consolas, Monaco, &#39;Andale Mono&#39;, &#39;Courier New&#39;, Courier, monospace; font-size: 12px; border: 1px dotted #9A9B9D; padding: 0 3px; border-radius: 4px">Import</code> your userDefineLang<br>5. Restart Notepad++<br><br>* <a href="https://raw.githubusercontent.com/jNizM/ahk_notepad-plus-plus/master/userDefineLang/default/userDefineLang_AHK.xml" class="postlink">Default Theme</a> (<a href="https://raw.githubusercontent.com/jNizM/ahk_notepad-plus-plus/master/userDefineLang/default/udl_default.png" class="postlink">Preview</a>)<br>* <a href="https://raw.githubusercontent.com/jNizM/ahk_notepad-plus-plus/master/userDefineLang/lazy/userDefineLang_AHK.xml" class="postlink">Lazy Theme</a> (<a href="https://raw.githubusercontent.com/jNizM/ahk_notepad-plus-plus/master/userDefineLang/lazy/udl_lazy.png" class="postlink">Preview</a>)<br><br><br><br><span style="font-size: 150%; line-height: normal"><strong><span style="color: #3FB137">Auto-Completion</span></strong></span><hr>1. Download <code style="font-family: Consolas, Monaco, &#39;Andale Mono&#39;, &#39;Courier New&#39;, Courier, monospace; font-size: 12px; border: 1px dotted #9A9B9D; padding: 0 3px; border-radius: 4px">AutoHotkey.xml</code> as raw (Right-click and choosing save as target...)<br>2. Save it to the right location <code style="font-family: Consolas, Monaco, &#39;Andale Mono&#39;, &#39;Courier New&#39;, Courier, monospace; font-size: 12px; border: 1px dotted #9A9B9D; padding: 0 3px; border-radius: 4px">C:\Program Files\Notepad++\plugins\APIs\</code> (on 32-Bit: <code style="font-family: Consolas, Monaco, &#39;Andale Mono&#39;, &#39;Courier New&#39;, Courier, monospace; font-size: 12px; border: 1px dotted #9A9B9D; padding: 0 3px; border-radius: 4px">C:\Program Files (x86)\Notepad++\plugins\APIs\</code>)<br>3. Start Notepad++ and click on Menu <code style="font-family: Consolas, Monaco, &#39;Andale Mono&#39;, &#39;Courier New&#39;, Courier, monospace; font-size: 12px; border: 1px dotted #9A9B9D; padding: 0 3px; border-radius: 4px">Settings -&gt; Preferences</code><br>4. Click on <code style="font-family: Consolas, Monaco, &#39;Andale Mono&#39;, &#39;Courier New&#39;, Courier, monospace; font-size: 12px; border: 1px dotted #9A9B9D; padding: 0 3px; border-radius: 4px">Auto-Completion</code> and activate <code style="font-family: Consolas, Monaco, &#39;Andale Mono&#39;, &#39;Courier New&#39;, Courier, monospace; font-size: 12px; border: 1px dotted #9A9B9D; padding: 0 3px; border-radius: 4px">Enable auto-completion on each input</code><br>5. (recommendation: From 2th character, Function completion, Function parameters hint on input)<br><br>* <a href="https://raw.githubusercontent.com/jNizM/ahk_notepad-plus-plus/master/autocomplete/AutoHotkey.xml" class="postlink">AutoComplete</a> (<a href="https://raw.githubusercontent.com/jNizM/ahk_notepad-plus-plus/master/autocomplete/autocomplete.png" class="postlink">Preview</a>)<br><br><br><br><span style="font-size: 150%; line-height: normal"><strong><span style="color: #3FB137">Plugins</span></strong></span><hr><strong>For 32-Bit Notepad++</strong><br>If the Plug-In is not available throw the Plugin Manager Menu <code style="font-family: Consolas, Monaco, &#39;Andale Mono&#39;, &#39;Courier New&#39;, Courier, monospace; font-size: 12px; border: 1px dotted #9A9B9D; padding: 0 3px; border-radius: 4px">Plugins -&gt; Plugin Manager</code> use the following steps to install a Plugin:<br>1. Download your Plugin<br>2. Save it to the right location <code style="font-family: Consolas, Monaco, &#39;Andale Mono&#39;, &#39;Courier New&#39;, Courier, monospace; font-size: 12px; border: 1px dotted #9A9B9D; padding: 0 3px; border-radius: 4px">C:\Program Files (x86)\Notepad++\plugins\</code><br>3. Restart Notepad++<br><br><strong>For 64-Bit Notepad++</strong><br>Since there is no Plugin Manager for 64-Bit Notepad++ atm you need to install all Plugins manually:<br>1. Download your Plugin<br>2. Save it to the right location <code style="font-family: Consolas, Monaco, &#39;Andale Mono&#39;, &#39;Courier New&#39;, Courier, monospace; font-size: 12px; border: 1px dotted #9A9B9D; padding: 0 3px; border-radius: 4px">C:\Program Files\Notepad++\plugins\</code><br>3. Restart Notepad++<br><br><strong>Useful Plugins</strong><br>* <a href="https://sites.google.com/site/fstellari/nppplugins/" class="postlink">AutoSave</a> (x86 / x64) allows to automatically save the currently open files based on a timer schedule.<br>* <a href="https://sites.google.com/site/fstellari/nppplugins/" class="postlink">RunMe</a> (x86 / x64) allows to execute the currently open file, based on its shell association.<br>* <a href="https://sourceforge.net/projects/npp-plugins/files/TextFX/" class="postlink">TextFX</a> (x86) brings a number of useful features.<br><br>More Plugins available <a href="http://docs.notepad-plus-plus.org/index.php?title=Plugin_Central" class="postlink">here</a> and <a href="https://sites.google.com/site/fstellari/nppplugins/" class="postlink">here</a><br><br><br><br><span style="font-size: 150%; line-height: normal"><strong><span style="color: #3FB137">Default Editor</span></strong></span><hr>Set Notepad++ as default Editor for AutoHotkey Scripts (right click -&gt; edit script)<br><div class="codebox codebox_plus"><p>Code: <a href="https://autohotkey.com/boards/viewtopic.php?t=50#" onclick="codebox_plus_select(this); return false;">[Select all]</a>&nbsp;<a href="https://autohotkey.com/boards/codeboxplus/download/196-1?sid=4f3ca0904763fcc945879057ce206f7e" onclick="window.open(this.href); return false;">[Download]</a> <span class="codebox_plus_about"><a href="http://qbnz.com/highlighter/" target="_blank">GeSHi</a> © <a href="https://github.com/ahkscript/phpBB-Extension-Codebox-Plus" target="_blank">Codebox Plus</a></span></p><code><pre class="reg"><span class="geshi_registry_header">Windows Registry Editor Version 5.00</span><br><br><span class="br0">[</span><span class="kw3">HKEY_CLASSES_ROOT</span>\AutoHotkeyScript\Shell\Edit\Command<span class="br0">]</span><br><span class="geshi_variable">@</span><span class="sy0">=</span><span class="st0">"C:\\Program Files <span class="br0">(</span>x86<span class="br0">)</span>\\Notepad++\\notepad++.exe %1"</span></pre></code></div><br><div class="codebox codebox_plus"><p>Code: <a href="https://autohotkey.com/boards/viewtopic.php?t=50#" onclick="codebox_plus_select(this); return false;">[Select all]</a>&nbsp;<a href="https://autohotkey.com/boards/codeboxplus/download/196-2?sid=4f3ca0904763fcc945879057ce206f7e" onclick="window.open(this.href); return false;">[Download]</a> <span class="codebox_plus_about"><a href="http://qbnz.com/highlighter/" target="_blank">GeSHi</a> © <a href="https://github.com/ahkscript/phpBB-Extension-Codebox-Plus" target="_blank">Codebox Plus</a></span></p><code><pre class="autohotkey"><a target="_blank" href="https://autohotkey.com/docs/RegWrite"><span class="kw3">RegWrite</span></a> REG_SZ<span class="sy0">,</span> HKCR<span class="sy0">,</span> AutoHotkeyScript\Shell\Edit\Command<span class="sy0">,,</span> C<span class="sy0">:</span>\Program Files <span class="br0">(</span>x86<span class="br0">)</span>\Notepad<span class="sy0">++</span>\notepad<span class="sy0">++.</span>exe `%1</pre></code></div><br><br><br><span style="font-size: 150%; line-height: normal"><strong><span style="color: #3FB137">Others</span></strong></span><hr>* <a href="https://autohotkey.com/boards/viewtopic.php?f=60&amp;t=27882" class="postlink">Hotstrings</a> (by Helgef) expand parameters for AHK's functions, commands and directives.<br>* <a href="https://autohotkey.com/boards/viewtopic.php?f=60&amp;t=18960" class="postlink">FunctionList</a> - Enable function list in Notepad++ for AHK scripts<br>* <a href="https://autohotkey.com/boards/viewtopic.php?f=60&amp;t=30173" class="postlink">MsgBox Creator</a> (by boiler) integrated into the editor like it is in SciTE4AutoHotkey<br>* <a href="https://autohotkey.com/boards/viewtopic.php?f=60&amp;t=30829" class="postlink">Run</a> (by boiler) run a script directly from Notepad++ whether or not it has ever been saved to a file<br><br><br><span style="font-size: 150%; line-height: normal"><strong><span style="color: #3FB137">Downloads</span></strong></span><hr>* <a href="https://autohotkey.com/download/" class="postlink">AutoHotkey</a> (current version)<br>* <a href="https://notepad-plus-plus.org/download/" class="postlink">Notepad++</a> (current version)</div>
+<div class="notice">
+Last edited by <a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=75&amp;sid=4f3ca0904763fcc945879057ce206f7e" style="color: #00AA00;" class="username-coloured">jNizM</a> on 22 Oct 2014, 05:28, edited 7 times in total.
+</div>
+<div id="sig196" class="signature"><span style="font-family: Courier New;"><strong><span style="color: #000000">[</span><span style="color: #00AA00">AHK</span><span style="color: #000000">]</span></strong> 1.1.26.01 x64 Unicode | <strong><span style="color: #000000">[</span><span style="color: #4395D1">WIN</span><span style="color: #000000">]</span></strong> 10 Pro (Version 1703) x64<br><a href="https://github.com/jNizM" class="postlink">My GitHub Profile</a> | <a href="https://www.paypal.me/smithz" class="postlink">Donations are appreciated if I could help you</a></span></div>
+</div>
+</div>
+</div>
+<div class="back2top"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#top" class="top" title="Top">Top</a></div>
+</div>
+<div id="p3452" class="post has-profile bg1">
+<div class="inner">
+<dl class="postprofile resized" id="profile3452" style="z-index: 27; min-height: 839px;">
+<dt class="no-profile-rank has-avatar">
+<div class="avatar-container">
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=197&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="avatar"><img class="avatar" src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/file(1).php" width="74" height="99" alt="User avatar"></a>
+</div>
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=197&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="username">empardopo</a>
+</dt>
+<dd class="profile-posts"><strong>Posts:</strong> <a href="https://autohotkey.com/boards/search.php?author_id=197&amp;sr=posts&amp;sid=4f3ca0904763fcc945879057ce206f7e">335</a></dd>
+<dd class="profile-joined"><strong>Joined:</strong> 06 Oct 2013</dd>
+<dd class="profile-custom-field profile-phpbb_location"><strong>Location:</strong> Spain</dd>
+<dd class="profile-contact">
+<strong>Contact:</strong>
+<div class="dropdown-container dropdown-right dropdown-down">
+<a href="https://autohotkey.com/boards/viewtopic.php?t=50#" class="dropdown-trigger dropdown-toggle"><span class="imageset icon_contact" title="Contact empardopo">Contact empardopo</span></a>
+<div class="dropdown hidden">
+<div class="pointer"><div class="pointer-inner"></div></div>
+<div class="dropdown-contents contact-icons">
+<div>
+<a href="http://empardopo.dyndns.info/web" title="Website" class="last-cell">
+<span class="contact-icon phpbb_website-icon">Website</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+<div class="postbody">
+<div id="post_content3452">
+<h3 style="display: none;"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#p3452">Re: Setup Notepad++ for AutoHotkey</a></h3>
+<ul class="post-buttons">
+<li>
+<a href="https://autohotkey.com/boards/posting.php?mode=quote&amp;f=60&amp;p=3452&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+</li>
+<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+<p class="author"><a href="https://autohotkey.com/boards/viewtopic.php?p=3452&amp;sid=4f3ca0904763fcc945879057ce206f7e#p3452">25 Oct 2013, 11:45</a></p>
+<div class="content">I have two questions...<br><br>1.- Is it possible to define Autohotkey as Default Language in New Document. It's not possible to me.<br><br><a href="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/Notepad-AutohotkeyDL.png" data-lightbox="post-gallery" data-title="Notepad-AutohotkeyDL.png"><img src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/Notepad-AutohotkeyDL.png" class="postimage" alt="Image" style="max-width: 768px; border: 3px solid transparent; transition: border-color 0.1s ease-out; border-radius: 6px; cursor: pointer;"></a><br><br>2.- Is it possible when I select Autohotkey language, notepad++ save a file ahk?<br><br>3.- How can I change the default theme?<br>In Style configurator It doesn't appear Autohotkey language...<br><br>Thanks in advance!</div>
+<div id="sig3452" class="signature"><strong>Everything is possible!</strong></div>
+</div>
+</div>
+</div>
+<div class="back2top"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#top" class="top" title="Top">Top</a></div>
+</div>
+<div id="p3693" class="post has-profile bg2">
+<div class="inner">
+<dl class="postprofile resized" id="profile3693" style="z-index: 26; min-height: 87px;">
+<dt class="no-profile-rank no-avatar">
+<div class="avatar-container">
+</div>
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=109&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="username">vahju</a>
+</dt>
+<dd class="profile-posts"><strong>Posts:</strong> <a href="https://autohotkey.com/boards/search.php?author_id=109&amp;sr=posts&amp;sid=4f3ca0904763fcc945879057ce206f7e">24</a></dd>
+<dd class="profile-joined"><strong>Joined:</strong> 30 Sep 2013</dd>
+</dl>
+<div class="postbody">
+<div id="post_content3693">
+<h3 style="display: none;"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#p3693">Re: Setup Notepad++ for AutoHotkey</a></h3>
+<ul class="post-buttons">
+<li>
+<a href="https://autohotkey.com/boards/posting.php?mode=quote&amp;f=60&amp;p=3693&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+</li>
+<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+<p class="author"><a href="https://autohotkey.com/boards/viewtopic.php?p=3693&amp;sid=4f3ca0904763fcc945879057ce206f7e#p3693">27 Oct 2013, 22:35</a></p>
+<div class="content">Looks like the links are missing for the Download and preview buttons under Syntax highlighting in the first post.</div>
+</div>
+</div>
+</div>
+<div class="back2top"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#top" class="top" title="Top">Top</a></div>
+</div>
+<div id="p3706" class="post has-profile bg1">
+<div class="inner">
+<dl class="postprofile resized" id="profile3706" style="z-index: 25; min-height: 142px;">
+<dt class="no-profile-rank has-avatar">
+<div class="avatar-container">
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=75&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="avatar"><img class="avatar" src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/file.php" width="100" height="100" alt="User avatar"></a>
+</div>
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=75&amp;sid=4f3ca0904763fcc945879057ce206f7e" style="color: #00AA00;" class="username-coloured">jNizM</a>
+</dt>
+<dd class="profile-posts"><strong>Posts:</strong> <a href="https://autohotkey.com/boards/search.php?author_id=75&amp;sr=posts&amp;sid=4f3ca0904763fcc945879057ce206f7e">2273</a></dd>
+<dd class="profile-joined"><strong>Joined:</strong> 30 Sep 2013</dd>
+<dd class="profile-custom-field profile-github"><strong>GitHub:</strong> jNizM</dd>
+<dd class="profile-contact">
+<strong>Contact:</strong>
+<div class="dropdown-container dropdown-right dropdown-down">
+<a href="https://autohotkey.com/boards/viewtopic.php?t=50#" class="dropdown-trigger dropdown-toggle"><span class="imageset icon_contact" title="Contact jNizM">Contact jNizM</span></a>
+<div class="dropdown hidden">
+<div class="pointer"><div class="pointer-inner"></div></div>
+<div class="dropdown-contents contact-icons">
+<div>
+<a href="https://github.com/jNizM" title="Website" class="last-cell">
+<span class="contact-icon phpbb_website-icon">Website</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+<div class="postbody">
+<div id="post_content3706">
+<h3 style="display: none;"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#p3706">Re: Setup Notepad++ for AutoHotkey</a></h3>
+<ul class="post-buttons">
+<li>
+<a href="https://autohotkey.com/boards/posting.php?mode=quote&amp;f=60&amp;p=3706&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+</li>
+<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+<p class="author"><a href="https://autohotkey.com/boards/viewtopic.php?p=3706&amp;sid=4f3ca0904763fcc945879057ce206f7e#p3706">28 Oct 2013, 01:33</a></p>
+<div class="content">All links in the first post work!</div>
+<div id="sig3706" class="signature"><span style="font-family: Courier New;"><strong><span style="color: #000000">[</span><span style="color: #00AA00">AHK</span><span style="color: #000000">]</span></strong> 1.1.26.01 x64 Unicode | <strong><span style="color: #000000">[</span><span style="color: #4395D1">WIN</span><span style="color: #000000">]</span></strong> 10 Pro (Version 1703) x64<br><a href="https://github.com/jNizM" class="postlink">My GitHub Profile</a> | <a href="https://www.paypal.me/smithz" class="postlink">Donations are appreciated if I could help you</a></span></div>
+</div>
+</div>
+</div>
+<div class="back2top"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#top" class="top" title="Top">Top</a></div>
+</div>
+<div id="p3730" class="post has-profile bg2">
+<div class="inner">
+<dl class="postprofile resized" id="profile3730" style="z-index: 24; min-height: 157px;">
+<dt class="no-profile-rank has-avatar">
+<div class="avatar-container">
+ <a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=197&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="avatar"><img class="avatar" src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/file(1).php" width="74" height="99" alt="User avatar"></a>
+</div>
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=197&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="username">empardopo</a>
+</dt>
+<dd class="profile-posts"><strong>Posts:</strong> <a href="https://autohotkey.com/boards/search.php?author_id=197&amp;sr=posts&amp;sid=4f3ca0904763fcc945879057ce206f7e">335</a></dd>
+<dd class="profile-joined"><strong>Joined:</strong> 06 Oct 2013</dd>
+<dd class="profile-custom-field profile-phpbb_location"><strong>Location:</strong> Spain</dd>
+<dd class="profile-contact">
+<strong>Contact:</strong>
+<div class="dropdown-container dropdown-right dropdown-down">
+<a href="https://autohotkey.com/boards/viewtopic.php?t=50#" class="dropdown-trigger dropdown-toggle"><span class="imageset icon_contact" title="Contact empardopo">Contact empardopo</span></a>
+<div class="dropdown hidden">
+<div class="pointer"><div class="pointer-inner"></div></div>
+<div class="dropdown-contents contact-icons">
+<div>
+<a href="http://empardopo.dyndns.info/web" title="Website" class="last-cell">
+<span class="contact-icon phpbb_website-icon">Website</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+<div class="postbody">
+<div id="post_content3730">
+<h3 style="display: none;"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#p3730">Re: Setup Notepad++ for AutoHotkey</a></h3>
+<ul class="post-buttons">
+<li>
+<a href="https://autohotkey.com/boards/posting.php?mode=quote&amp;f=60&amp;p=3730&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+</li>
+<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+<p class="author"><a href="https://autohotkey.com/boards/viewtopic.php?p=3730&amp;sid=4f3ca0904763fcc945879057ce206f7e#p3730">28 Oct 2013, 08:21</a></p>
+<div class="content">The links are OK.<br>Download it. Installed but I have problems I mention above.<br><br>I think that I'm going to check with Sublime. Thanks!</div>
+<div id="sig3730" class="signature"><strong>Everything is possible!</strong></div>
+</div>
+</div>
+</div>
+<div class="back2top"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#top" class="top" title="Top">Top</a></div>
+</div>
+<div id="p3802" class="post has-profile bg1">
+<div class="inner">
+<dl class="postprofile resized" id="profile3802" style="z-index: 23; min-height: 87px;">
+<dt class="no-profile-rank no-avatar">
+<div class="avatar-container">
+</div>
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=109&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="username">vahju</a>
+</dt>
+<dd class="profile-posts"><strong>Posts:</strong> <a href="https://autohotkey.com/boards/search.php?author_id=109&amp;sr=posts&amp;sid=4f3ca0904763fcc945879057ce206f7e">24</a></dd>
+<dd class="profile-joined"><strong>Joined:</strong> 30 Sep 2013</dd>
+</dl>
+<div class="postbody">
+<div id="post_content3802">
+<h3 style="display: none;"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#p3802">Re: Setup Notepad++ for AutoHotkey</a></h3>
+<ul class="post-buttons">
+<li>
+<a href="https://autohotkey.com/boards/posting.php?mode=quote&amp;f=60&amp;p=3802&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+</li>
+<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+<p class="author"><a href="https://autohotkey.com/boards/viewtopic.php?p=3802&amp;sid=4f3ca0904763fcc945879057ce206f7e#p3802">28 Oct 2013, 22:29</a></p>
+<div class="content">jNizm sorry for the false alarm. After seeing your response I finally figured it out. Chalk this up to user error.</div>
+</div>
+</div>
+ </div>
+<div class="back2top"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#top" class="top" title="Top">Top</a></div>
+</div>
+<div id="p5934" class="post has-profile bg2">
+<div class="inner">
+<dl class="postprofile resized" id="profile5934" style="z-index: 22; min-height: 228px;">
+<dt class="no-profile-rank has-avatar">
+<div class="avatar-container">
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=55666&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="avatar"><img class="avatar" src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/file(2).php" width="80" height="80" alt="User avatar"></a>
+</div>
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=55666&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="username">wernerml</a>
+</dt>
+<dd class="profile-posts"><strong>Posts:</strong> <a href="https://autohotkey.com/boards/search.php?author_id=55666&amp;sr=posts&amp;sid=4f3ca0904763fcc945879057ce206f7e">3</a></dd>
+<dd class="profile-joined"><strong>Joined:</strong> 27 Nov 2013</dd>
+<dd class="profile-custom-field profile-facebook"><strong>Facebook:</strong> <a href="mailto:wernerml@gmail.com">wernerml@gmail.com</a></dd>
+<dd class="profile-custom-field profile-phpbb_location"><strong>Location:</strong> Brazil</dd>
+</dl>
+<div class="postbody">
+<div id="post_content5934">
+<h3 style="display: none;"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#p5934">Re: Setup Notepad++ for AutoHotkey</a></h3>
+<ul class="post-buttons">
+<li>
+<a href="https://autohotkey.com/boards/posting.php?mode=quote&amp;f=60&amp;p=5934&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+</li>
+<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+<p class="author"><a href="https://autohotkey.com/boards/viewtopic.php?p=5934&amp;sid=4f3ca0904763fcc945879057ce206f7e#p5934">27 Nov 2013, 13:58</a></p>
+<div class="content">first of all: really nice, thanks man!<br><br>but i'm having a little problem here... I use a theme (that came with NPP by default), it's: "Ruby Blue"<br><br>and it's merged with this AutoHotkey style...<br><a href="https://img812.imageshack.us/img812/143/rq8x.png" class="postlink">http://img812.imageshack.us/img812/143/rq8x.png</a><br><br>I want to continue using this theme for all files, <strong>except .ahk files</strong><br><br>maybe there's a way to do it.. but I don't know Notepad++ very much...</div>
+</div>
+</div>
+</div>
+<div class="back2top"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#top" class="top" title="Top">Top</a></div>
+</div>
+<div id="p5991" class="post has-profile bg1">
+<div class="inner">
+<dl class="postprofile resized" id="profile5991" style="z-index: 21; min-height: 244px;">
+<dt class="no-profile-rank has-avatar">
+<div class="avatar-container">
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=75&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="avatar"><img class="avatar" src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/file.php" width="100" height="100" alt="User avatar"></a>
+</div>
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=75&amp;sid=4f3ca0904763fcc945879057ce206f7e" style="color: #00AA00;" class="username-coloured">jNizM</a>
+</dt>
+<dd class="profile-posts"><strong>Posts:</strong> <a href="https://autohotkey.com/boards/search.php?author_id=75&amp;sr=posts&amp;sid=4f3ca0904763fcc945879057ce206f7e">2273</a></dd>
+<dd class="profile-joined"><strong>Joined:</strong> 30 Sep 2013</dd>
+<dd class="profile-custom-field profile-github"><strong>GitHub:</strong> jNizM</dd>
+<dd class="profile-contact">
+<strong>Contact:</strong>
+<div class="dropdown-container dropdown-right dropdown-down">
+<a href="https://autohotkey.com/boards/viewtopic.php?t=50#" class="dropdown-trigger dropdown-toggle"><span class="imageset icon_contact" title="Contact jNizM">Contact jNizM</span></a>
+<div class="dropdown hidden">
+<div class="pointer"><div class="pointer-inner"></div></div>
+<div class="dropdown-contents contact-icons">
+
+<div>
+<a href="https://github.com/jNizM" title="Website" class="last-cell">
+<span class="contact-icon phpbb_website-icon">Website</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+<div class="postbody">
+<div id="post_content5991">
+<h3 style="display: none;"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#p5991">Re: Setup Notepad++ for AutoHotkey</a></h3>
+<ul class="post-buttons">
+<li>
+<a href="https://autohotkey.com/boards/posting.php?mode=quote&amp;f=60&amp;p=5991&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+</li>
+<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+<p class="author"><a href="https://autohotkey.com/boards/viewtopic.php?p=5991&amp;sid=4f3ca0904763fcc945879057ce206f7e#p5991">28 Nov 2013, 09:35</a></p>
+<div class="content">try to change the <code style="font-family: Consolas, Monaco, &#39;Andale Mono&#39;, &#39;Courier New&#39;, Courier, monospace; font-size: 12px; border: 1px dotted #9A9B9D; padding: 0 3px; border-radius: 4px">bgColor="FFFFFF"</code> to this ruby blue in userDefineLang_AHK.xml<br>bgColor = BackgroundColor<br><br>eg<br><div class="codebox codebox_plus"><p>Code: <a href="https://autohotkey.com/boards/viewtopic.php?t=50#" onclick="codebox_plus_select(this); return false;">[Select all]</a>&nbsp;<a href="https://autohotkey.com/boards/codeboxplus/download/5991-1?sid=4f3ca0904763fcc945879057ce206f7e" onclick="window.open(this.href); return false;">[Download]</a> <span class="codebox_plus_about"><a href="http://qbnz.com/highlighter/" target="_blank">GeSHi</a> © <a href="https://github.com/ahkscript/phpBB-Extension-Codebox-Plus" target="_blank">Codebox Plus</a></span></p><code><pre class="autohotkey"><span class="sy0">&lt;</span>WordsStyle name<span class="sy0">=</span><span class="st0">"KEYWORDS1"</span> styleID<span class="sy0">=</span><span class="st0">"4"</span> fgColor<span class="sy0">=</span><span class="st0">"0060FF"</span> bgColor<span class="sy0">=</span><span class="st0">"FFFFFF"</span> fontName<span class="sy0">=</span><span class="st0">""</span> fontStyle<span class="sy0">=</span><span class="st0">"0"</span> nesting<span class="sy0">=</span><span class="st0">"0"</span><span class="sy0">/&gt;</span><br></pre></code></div></div>
+<div id="sig5991" class="signature"><span style="font-family: Courier New;"><strong><span style="color: #000000">[</span><span style="color: #00AA00">AHK</span><span style="color: #000000">]</span></strong> 1.1.26.01 x64 Unicode | <strong><span style="color: #000000">[</span><span style="color: #4395D1">WIN</span><span style="color: #000000">]</span></strong> 10 Pro (Version 1703) x64<br><a href="https://github.com/jNizM" class="postlink">My GitHub Profile</a> | <a href="https://www.paypal.me/smithz" class="postlink">Donations are appreciated if I could help you</a></span></div>
+</div>
+</div>
+</div>
+<div class="back2top"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#top" class="top" title="Top">Top</a></div>
+</div>
+<div id="p6004" class="post has-profile bg2">
+<div class="inner">
+<dl class="postprofile resized" id="profile6004" style="z-index: 20; min-height: 271px;">
+<dt class="no-profile-rank has-avatar">
+<div class="avatar-container">
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=55666&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="avatar"><img class="avatar" src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/file(2).php" width="80" height="80" alt="User avatar"></a>
+</div>
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=55666&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="username">wernerml</a>
+</dt>
+<dd class="profile-posts"><strong>Posts:</strong> <a href="https://autohotkey.com/boards/search.php?author_id=55666&amp;sr=posts&amp;sid=4f3ca0904763fcc945879057ce206f7e">3</a></dd>
+<dd class="profile-joined"><strong>Joined:</strong> 27 Nov 2013</dd>
+<dd class="profile-custom-field profile-facebook"><strong>Facebook:</strong> <a href="mailto:wernerml@gmail.com">wernerml@gmail.com</a></dd>
+<dd class="profile-custom-field profile-phpbb_location"><strong>Location:</strong> Brazil</dd>
+</dl>
+<div class="postbody">
+<div id="post_content6004">
+<h3 style="display: none;"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#p6004">Re: Setup Notepad++ for AutoHotkey</a></h3>
+<ul class="post-buttons">
+<li>
+<a href="https://autohotkey.com/boards/posting.php?mode=quote&amp;f=60&amp;p=6004&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+</li>
+<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+<p class="author"><a href="https://autohotkey.com/boards/viewtopic.php?p=6004&amp;sid=4f3ca0904763fcc945879057ce206f7e#p6004">28 Nov 2013, 16:09</a></p>
+<div class="content"><blockquote><div><cite>jNizM wrote:</cite>try to change the <code style="font-family: Consolas, Monaco, &#39;Andale Mono&#39;, &#39;Courier New&#39;, Courier, monospace; font-size: 12px; border: 1px dotted #9A9B9D; padding: 0 3px; border-radius: 4px">bgColor="FFFFFF"</code> to this ruby blue</div></blockquote><br><br>it stayed the same... I guess I've not explained myself too well:<br><br>the backgroud is "ruby blue" in autohotkey scripts... I want it to be "white??", I want your full style working...<br><br>but this "Ruby Blue Style" is overriding your style....<br><br>I guess it's more complicated...</div>
+</div>
+</div>
+</div>
+<div class="back2top"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#top" class="top" title="Top">Top</a></div>
+</div>
+<div id="p6013" class="post has-profile bg1">
+<div class="inner">
+<dl class="postprofile resized" id="profile6013" style="z-index: 19; min-height: 247px;">
+<dt class="no-profile-rank has-avatar">
+<div class="avatar-container">
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=55666&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="avatar"><img class="avatar" src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/file(2).php" width="80" height="80" alt="User avatar"></a>
+</div>
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=55666&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="username">wernerml</a>
+</dt>
+<dd class="profile-posts"><strong>Posts:</strong> <a href="https://autohotkey.com/boards/search.php?author_id=55666&amp;sr=posts&amp;sid=4f3ca0904763fcc945879057ce206f7e">3</a></dd>
+<dd class="profile-joined"><strong>Joined:</strong> 27 Nov 2013</dd>
+<dd class="profile-custom-field profile-facebook"><strong>Facebook:</strong> <a href="mailto:wernerml@gmail.com">wernerml@gmail.com</a></dd>
+<dd class="profile-custom-field profile-phpbb_location"><strong>Location:</strong> Brazil</dd>
+</dl>
+<div class="postbody">
+<div id="post_content6013">
+<h3 style="display: none;"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#p6013">Re: Setup Notepad++ for AutoHotkey</a></h3>
+<ul class="post-buttons">
+<li>
+<a href="https://autohotkey.com/boards/posting.php?mode=quote&amp;f=60&amp;p=6013&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+</li>
+<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+<p class="author"><a href="https://autohotkey.com/boards/viewtopic.php?p=6013&amp;sid=4f3ca0904763fcc945879057ce206f7e#p6013">28 Nov 2013, 22:32</a></p>
+<div class="content">Ok, I've found an explanation, but I didn't understand if this is possible or not...<br>here: <a href="https://stackoverflow.com/questions/11574590/in-notepad-set-background-color-for-file-type" class="postlink">http://stackoverflow.com/questions/11574590/in-notepad-set-background-color-for-file-type</a><br><br>EDIT: Here: <a class="postlink" href="https://sourceforge.net/p/notepad-plus/discussion/331754/thread/bd2bc405/">https://sourceforge.net/p/notepad-plus/ ... /bd2bc405/</a><br>but, again, didn't understand if they implemented this yet...<br><br>EDIT 2: OK, this is not possible after all...<br>explained here: <a href="https://sourceforge.net/p/notepad-plus/discussion/331754/thread/0f0d47af" class="postlink">https://sourceforge.net/p/notepad-plus/discussion/331754/thread/0f0d47af</a><br>(on the last post)<br><br> <img class="smilies" src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/icon_redface.gif" alt=":oops:" title="Embarrassed"></div>
+</div>
+</div>
+</div>
+<div class="back2top"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#top" class="top" title="Top">Top</a></div>
+</div>
+<div id="p13344" class="post has-profile bg2">
+<div class="inner">
+<dl class="postprofile resized" id="profile13344" style="z-index: 18; min-height: 318px;">
+<dt class="no-profile-rank no-avatar">
+<div class="avatar-container">
+</div>
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=57792&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="username">AHKxx</a>
+</dt>
+<dd class="profile-posts"><strong>Posts:</strong> <a href="https://autohotkey.com/boards/search.php?author_id=57792&amp;sr=posts&amp;sid=4f3ca0904763fcc945879057ce206f7e">52</a></dd>
+<dd class="profile-joined"><strong>Joined:</strong> 26 Feb 2014</dd>
+</dl>
+<div class="postbody">
+<div id="post_content13344">
+<h3 style="display: none;"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#p13344">Re: Setup Notepad++ for AutoHotkey</a></h3>
+<ul class="post-buttons">
+<li>
+<a href="https://autohotkey.com/boards/posting.php?mode=quote&amp;f=60&amp;p=13344&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+</li>
+<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+<p class="author"><a href="https://autohotkey.com/boards/viewtopic.php?p=13344&amp;sid=4f3ca0904763fcc945879057ce206f7e#p13344">26 Feb 2014, 02:47</a></p>
+<div class="content">Hey thanks. This is what I was hoping to find here. I've been using SciTE but would prefer to use NPP. <br><br>But I'm finding something odd. an ahk script that appears fine in SciTE, and that AHK loads without complaint, is showing up as an error in AHK. And it's a very simple thing too. <br><br>This...<br><br> ^':: Send {LEFT 1}"{RIGHT 1}<br><br>...is causing everything to the right of the quote mark to display in red. If I put a semicolon immediately in front of the quote, everything is good. <br><br>Any idea why that might be? It's just a plain text quote mark, and again, AHK loads and runs it just fine: for example, here: " <br><br>Any insights would be appreciated. <br><br>Thanks!</div>
+</div>
+</div>
+</div>
+<div class="back2top"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#top" class="top" title="Top">Top</a></div>
+</div>
+<div id="p13812" class="post has-profile bg1">
+<div class="inner">
+<dl class="postprofile resized" id="profile13812" style="z-index: 17; min-height: 554px;">
+<dt class="no-profile-rank no-avatar">
+<div class="avatar-container">
+</div>
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=137&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="username">RiseUp</a>
+</dt>
+<dd class="profile-posts"><strong>Posts:</strong> <a href="https://autohotkey.com/boards/search.php?author_id=137&amp;sr=posts&amp;sid=4f3ca0904763fcc945879057ce206f7e">7</a></dd>
+<dd class="profile-joined"><strong>Joined:</strong> 01 Oct 2013</dd>
+</dl>
+<div class="postbody">
+<div id="post_content13812">
+<h3 style="display: none;"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#p13812">Re: Setup Notepad++ for AutoHotkey</a></h3>
+<ul class="post-buttons">
+<li>
+<a href="https://autohotkey.com/boards/posting.php?mode=quote&amp;f=60&amp;p=13812&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+</li>
+<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+<p class="author"><a href="https://autohotkey.com/boards/viewtopic.php?p=13812&amp;sid=4f3ca0904763fcc945879057ce206f7e#p13812">03 Mar 2014, 21:31</a></p>
+<div class="content"><blockquote><div><cite>AHKxx wrote:</cite>This...<br><br> ^':: Send {LEFT 1}"{RIGHT 1}<br><br>...is causing everything to the right of the quote mark to display in red. If I put a semicolon immediately in front of the quote, everything is good. <br><br>Any idea why that might be? It's just a plain text quote mark, and again, AHK loads and runs it just fine: for example, here: " <br><br>Any insights would be appreciated. <br><br>Thanks!</div></blockquote><br><br><strong>AHKxx</strong>,<br><br>Notepad++ is coloring everything after the double quotation mark (") red because it thinks that's all a string in your code. It only stops the red coloring after it encounters another double quotation mark which would normally signify the end of a string. For your particular case where the quotes are not there to mark a string, it's a bug in NP's AHK language setup, and unfortunately I do not know how to fix it.<br><br>However, I have a workaround that I use and maybe it will work for you. Change that line of code to:<br><div class="codebox codebox_plus"><p>Code: <a href="https://autohotkey.com/boards/viewtopic.php?t=50#" onclick="codebox_plus_select(this); return false;">[Select all]</a>&nbsp;<a href="https://autohotkey.com/boards/codeboxplus/download/13812-1?sid=4f3ca0904763fcc945879057ce206f7e" onclick="window.open(this.href); return false;">[Download]</a> <span class="codebox_plus_about"><a href="http://qbnz.com/highlighter/" target="_blank">GeSHi</a> © <a href="https://github.com/ahkscript/phpBB-Extension-Codebox-Plus" target="_blank">Codebox Plus</a></span></p><code><pre class="autohotkey"><span class="sy0">^</span>'<span class="sy0">::</span> <a target="_blank" href="https://autohotkey.com/docs/Send"><span class="kw3">Send</span></a> <span class="br0">{</span><span class="kw6">LEFT</span> <span class="nu0">1</span><span class="br0">}</span><span class="st0">"{RIGHT 1}  ;"</span></pre></code></div><br>The second quotation mark will tell NP++ to stop coloring things red after it, and AHK will ignore it because it's commented out.<br><br>Hope that helps!</div>
+</div>
+</div>
+</div>
+<div class="back2top"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#top" class="top" title="Top">Top</a></div>
+</div>
+<div id="p14003" class="post has-profile bg2">
+<div class="inner">
+<dl class="postprofile resized" id="profile14003" style="z-index: 16; min-height: 332px;">
+<dt class="no-profile-rank no-avatar">
+<div class="avatar-container">
+</div>
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=57792&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="username">AHKxx</a>
+</dt>
+<dd class="profile-posts"><strong>Posts:</strong> <a href="https://autohotkey.com/boards/search.php?author_id=57792&amp;sr=posts&amp;sid=4f3ca0904763fcc945879057ce206f7e">52</a></dd>
+<dd class="profile-joined"><strong>Joined:</strong> 26 Feb 2014</dd>
+</dl>
+<div class="postbody">
+<div id="post_content14003">
+<h3 style="display: none;"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#p14003">Re: Setup Notepad++ for AutoHotkey</a></h3>
+<ul class="post-buttons">
+<li>
+<a href="https://autohotkey.com/boards/posting.php?mode=quote&amp;f=60&amp;p=14003&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+</li>
+<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+<p class="author"><a href="https://autohotkey.com/boards/viewtopic.php?p=14003&amp;sid=4f3ca0904763fcc945879057ce206f7e#p14003">07 Mar 2014, 00:30</a></p>
+<div class="content"><blockquote><div><cite>RiseUp wrote:</cite>However, I have a workaround that I use and maybe it will work for you. Change that line of code to:<br><div class="codebox codebox_plus"><p>Code: <a href="https://autohotkey.com/boards/viewtopic.php?t=50#" onclick="codebox_plus_select(this); return false;">[Select all]</a>&nbsp;<a href="https://autohotkey.com/boards/codeboxplus/download/14003-1?sid=4f3ca0904763fcc945879057ce206f7e" onclick="window.open(this.href); return false;">[Download]</a> <span class="codebox_plus_about"><a href="http://qbnz.com/highlighter/" target="_blank">GeSHi</a> © <a href="https://github.com/ahkscript/phpBB-Extension-Codebox-Plus" target="_blank">Codebox Plus</a></span></p><code><pre class="autohotkey"><span class="sy0">^</span>'<span class="sy0">::</span> <a target="_blank" href="https://autohotkey.com/docs/Send"><span class="kw3">Send</span></a> <span class="br0">{</span><span class="kw6">LEFT</span> <span class="nu0">1</span><span class="br0">}</span><span class="st0">"{RIGHT 1}  ;"</span></pre></code></div><br>The second quotation mark will tell NP++ to stop coloring things red after it, and AHK will ignore it because it's commented out.<br><br>Hope that helps!</div></blockquote><br><br>Hey RiseUp.<br><br>Thanks much for your reply and the explanation... and the workaround! It worked like a charm! I will watch out for that in the future.</div>
+</div>
+</div>
+</div>
+<div class="back2top"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#top" class="top" title="Top">Top</a></div>
+</div>
+<div id="p14851" class="post has-profile bg1">
+<div class="inner">
+<dl class="postprofile resized" id="profile14851" style="z-index: 15; min-height: 178px;">
+<dt class="no-profile-rank no-avatar">
+<div class="avatar-container">
+</div>
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=137&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="username">RiseUp</a>
+</dt>
+<dd class="profile-posts"><strong>Posts:</strong> <a href="https://autohotkey.com/boards/search.php?author_id=137&amp;sr=posts&amp;sid=4f3ca0904763fcc945879057ce206f7e">7</a></dd>
+<dd class="profile-joined"><strong>Joined:</strong> 01 Oct 2013</dd>
+</dl>
+<div class="postbody">
+<div id="post_content14851">
+<h3 style="display: none;"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#p14851">Re: Setup Notepad++ for AutoHotkey</a></h3>
+<ul class="post-buttons">
+<li>
+<a href="https://autohotkey.com/boards/posting.php?mode=quote&amp;f=60&amp;p=14851&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+</li>
+<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+<p class="author"><a href="https://autohotkey.com/boards/viewtopic.php?p=14851&amp;sid=4f3ca0904763fcc945879057ce206f7e#p14851">19 Mar 2014, 18:25</a></p>
+<div class="content"><blockquote><div><cite>AHKxx wrote:</cite>Hey RiseUp.<br><br>Thanks much for your reply and the explanation... and the workaround! It worked like a charm! I will watch out for that in the future.</div></blockquote><br>You're welcome. <img class="smilies" src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/icon_e_smile.gif" alt=":)" title="Smile"></div>
+</div>
+</div>
+</div>
+<div class="back2top"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#top" class="top" title="Top">Top</a></div>
+</div>
+<div id="p18311" class="post has-profile bg2">
+<div class="inner">
+<dl class="postprofile resized" id="profile18311" style="z-index: 14; min-height: 770px;">
+<dt class="no-profile-rank no-avatar">
+<div class="avatar-container">
+</div>
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=59353&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="username">vangogh</a>
+</dt>
+<dd class="profile-posts"><strong>Posts:</strong> <a href="https://autohotkey.com/boards/search.php?author_id=59353&amp;sr=posts&amp;sid=4f3ca0904763fcc945879057ce206f7e">3</a></dd>
+<dd class="profile-joined"><strong>Joined:</strong> 16 May 2014</dd>
+</dl>
+<div class="postbody">
+<div id="post_content18311">
+<h3 style="display: none;"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#p18311">Re: Setup Notepad++ for AutoHotkey</a></h3>
+<ul class="post-buttons">
+<li>
+<a href="https://autohotkey.com/boards/posting.php?mode=quote&amp;f=60&amp;p=18311&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+</li>
+<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+<p class="author"><a href="https://autohotkey.com/boards/viewtopic.php?p=18311&amp;sid=4f3ca0904763fcc945879057ce206f7e#p18311">16 May 2014, 06:09</a></p>
+<div class="content">hi there,<br><br>Thanks for the scripts!<br><br>on a related note, i'd like to check if there's a black/dark theme that can be adapted directly for use? currently, the styling is pretty illegible under a dark background as seen below:<br><br><img src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/2XhJz1L.jpg" class="postimage" alt="Image" style="max-width: 768px;"><br><br>i'm hoping for styling that's similar to SciTe4AHK:<br><br><img src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/tT0Bi4e.jpg" class="postimage" alt="Image" style="max-width: 768px;"><br><br>Thank you.!</div>
+</div>
+</div>
+</div>
+<div class="back2top"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#top" class="top" title="Top">Top</a></div>
+</div>
+<div id="p23411" class="post has-profile bg1">
+<div class="inner">
+<dl class="postprofile resized" id="profile23411" style="z-index: 13; min-height: 120px;">
+<dt class="no-profile-rank no-avatar">
+<div class="avatar-container">
+</div>
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=58860&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="username">alllala</a>
+</dt>
+<dd class="profile-posts"><strong>Posts:</strong> <a href="https://autohotkey.com/boards/search.php?author_id=58860&amp;sr=posts&amp;sid=4f3ca0904763fcc945879057ce206f7e">13</a></dd>
+<dd class="profile-joined"><strong>Joined:</strong> 03 Apr 2014</dd>
+</dl>
+<div class="postbody">
+<div id="post_content23411">
+<h3 style="display: none;"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#p23411">Re: Setup Notepad++ for AutoHotkey</a></h3>
+<ul class="post-buttons">
+<li>
+<a href="https://autohotkey.com/boards/posting.php?mode=quote&amp;f=60&amp;p=23411&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+</li>
+<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+<p class="author"><a href="https://autohotkey.com/boards/viewtopic.php?p=23411&amp;sid=4f3ca0904763fcc945879057ce206f7e#p23411">07 Aug 2014, 10:10</a></p>
+<div class="content">Does this work with NP++ 6.6.2?<br>Could not get it to work.<br> <br>I´m still using NP++ 6.1.4 because I´m so used to the syntax Highlighting</div>
+</div>
+</div>
+</div>
+<div class="back2top"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#top" class="top" title="Top">Top</a></div>
+</div>
+<div id="p23449" class="post has-profile bg2">
+<div class="inner">
+<dl class="postprofile resized" id="profile23449" style="z-index: 12; min-height: 795px;">
+<dt class="no-profile-rank has-avatar">
+<div class="avatar-container">
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=75&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="avatar"><img class="avatar" src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/file.php" width="100" height="100" alt="User avatar"></a>
+</div>
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=75&amp;sid=4f3ca0904763fcc945879057ce206f7e" style="color: #00AA00;" class="username-coloured">jNizM</a>
+</dt>
+<dd class="profile-posts"><strong>Posts:</strong> <a href="https://autohotkey.com/boards/search.php?author_id=75&amp;sr=posts&amp;sid=4f3ca0904763fcc945879057ce206f7e">2273</a></dd>
+<dd class="profile-joined"><strong>Joined:</strong> 30 Sep 2013</dd>
+<dd class="profile-custom-field profile-github"><strong>GitHub:</strong> jNizM</dd>
+<dd class="profile-contact">
+<strong>Contact:</strong>
+<div class="dropdown-container dropdown-right dropdown-down">
+<a href="https://autohotkey.com/boards/viewtopic.php?t=50#" class="dropdown-trigger dropdown-toggle"><span class="imageset icon_contact" title="Contact jNizM">Contact jNizM</span></a>
+<div class="dropdown hidden">
+<div class="pointer"><div class="pointer-inner"></div></div>
+<div class="dropdown-contents contact-icons">
+<div>
+<a href="https://github.com/jNizM" title="Website" class="last-cell">
+<span class="contact-icon phpbb_website-icon">Website</span>
+
+</a>
+</div>
+</div>
+</div>
+</div>
+</dd>
+</dl>
+<div class="postbody">
+<div id="post_content23449">
+<h3 style="display: none;"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#p23449">Re: Setup Notepad++ for AutoHotkey</a></h3>
+<ul class="post-buttons">
+<li>
+<a href="https://autohotkey.com/boards/posting.php?mode=quote&amp;f=60&amp;p=23449&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+</li>
+<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+<p class="author"><a href="https://autohotkey.com/boards/viewtopic.php?p=23449&amp;sid=4f3ca0904763fcc945879057ce206f7e#p23449">08 Aug 2014, 00:33</a></p>
+<div class="content">I use Notepad++ v6.6.8 and it works<br><img src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/ZUAjP55.jpg" class="postimage" alt="Image" style="max-width: 768px;"></div>
+<div id="sig23449" class="signature"><span style="font-family: Courier New;"><strong><span style="color: #000000">[</span><span style="color: #00AA00">AHK</span><span style="color: #000000">]</span></strong> 1.1.26.01 x64 Unicode | <strong><span style="color: #000000">[</span><span style="color: #4395D1">WIN</span><span style="color: #000000">]</span></strong> 10 Pro (Version 1703) x64<br><a href="https://github.com/jNizM" class="postlink">My GitHub Profile</a> | <a href="https://www.paypal.me/smithz" class="postlink">Donations are appreciated if I could help you</a></span></div>
+</div>
+</div>
+</div>
+<div class="back2top"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#top" class="top" title="Top">Top</a></div>
+</div>
+<div id="p23707" class="post has-profile bg1">
+<div class="inner">
+<dl class="postprofile resized" id="profile23707" style="z-index: 11; min-height: 857px;">
+<dt class="no-profile-rank no-avatar">
+<div class="avatar-container">
+</div>
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=59829&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="username">raron</a>
+</dt>
+<dd class="profile-posts"><strong>Posts:</strong> <a href="https://autohotkey.com/boards/search.php?author_id=59829&amp;sr=posts&amp;sid=4f3ca0904763fcc945879057ce206f7e">22</a></dd>
+<dd class="profile-joined"><strong>Joined:</strong> 11 Aug 2014</dd>
+</dl>
+<div class="postbody">
+<div id="post_content23707">
+<h3 style="display: none;"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#p23707">Re: Setup Notepad++ for AutoHotkey</a></h3>
+<ul class="post-buttons">
+<li>
+<a href="https://autohotkey.com/boards/posting.php?mode=quote&amp;f=60&amp;p=23707&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+</li>
+<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+<p class="author"><a href="https://autohotkey.com/boards/viewtopic.php?p=23707&amp;sid=4f3ca0904763fcc945879057ce206f7e#p23707">12 Aug 2014, 22:41</a></p>
+<div class="content">Using Notepad++ 6.6.7. Nice links from OP, but the "Function List" plugin don't seem to work, unfortunately.<br><br>Btw, attached is my dark themed AutoHotkey syntax highlighting atm. Bit of a mix from here and there and (tried to) fixed it up a bit now - OK, I might have gone a bit overboard with the colors maybe... (I like colors <img class="smilies" src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/icon_e_smile.gif" alt=":)" title="Smile"> ) And it's not perfect, trouble with lines with a single percent sign in them for one.<br><br><img src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/rYXCniK.png" class="postimage" alt="Image" style="max-width: 768px;"><br><br>Also, using the font Consolas, obtainable from here: <a class="postlink" href="https://www.microsoft.com/en-us/download/details.aspx?id=17879">http://www.microsoft.com/en-us/download ... x?id=17879</a><br>I'm also liking the "Lucida Console", which I think I just had on my system (Win 7). Both monospaced.<br><br>I didn't set the font in the AHK syntax coloring file. Just set it in the menu Settings - Style configurator - Global styles - Default style - Font style (And no global overrides).<br><br><br>EDIT: Switched from Photobucket to imgur host for image.</div>
+<dl class="attachbox">
+<dt>
+Attachments
+</dt>
+<dd>
+<dl class="file">
+<dt><span class="imageset icon_topic_attach"></span> <a class="postlink" href="https://autohotkey.com/boards/download/file.php?id=326&amp;sid=4f3ca0904763fcc945879057ce206f7e">Notepad++ rarons AutoHotKey syntax highlighting.rar</a></dt>
+<dd><em>WIP - my current AutoHotkey syntax highlight colors.</em></dd> <dd>(3.19 KiB) Downloaded 1251 times</dd>
+</dl>
+</dd>
+</dl>
+<div class="notice">
+Last edited by <a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=59829&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="username">raron</a> on 05 Aug 2017, 21:42, edited 1 time in total.
+</div>
+</div>
+</div>
+</div>
+<div class="back2top"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#top" class="top" title="Top">Top</a></div>
+</div>
+<div id="p25016" class="post has-profile bg2">
+<div class="inner">
+<dl class="postprofile resized" id="profile25016" style="z-index: 10; min-height: 140px;">
+<dt class="no-profile-rank has-avatar">
+<div class="avatar-container">
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=59933&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="avatar"><img class="avatar" src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/file(3).php" width="100" height="100" alt="User avatar"></a>
+</div>
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=59933&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="username">Congsinh</a>
+</dt>
+<dd class="profile-posts"><strong>Posts:</strong> <a href="https://autohotkey.com/boards/search.php?author_id=59933&amp;sr=posts&amp;sid=4f3ca0904763fcc945879057ce206f7e">3</a></dd>
+<dd class="profile-joined"><strong>Joined:</strong> 02 Sep 2014</dd>
+</dl>
+<div class="postbody">
+<div id="post_content25016">
+<h3 style="display: none;"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#p25016">Re: Setup Notepad++ for AutoHotkey</a></h3>
+<ul class="post-buttons">
+<li>
+<a href="https://autohotkey.com/boards/posting.php?mode=quote&amp;f=60&amp;p=25016&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+</li>
+<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+<p class="author"><a href="https://autohotkey.com/boards/viewtopic.php?p=25016&amp;sid=4f3ca0904763fcc945879057ce206f7e#p25016">02 Sep 2014, 12:15</a></p>
+<div class="content">It work, thank you!</div>
+<div id="sig25016" class="signature"><span style="font-size: 84%; line-height: normal"><em><span style="color: #F00000">@</span><span style="color: #008000">}-;-- Close your eyes and your will find ... The passage out of the dark</span></em><br><span style="color: #008000">~~~:</span> <a href="http://ahkscript.org/boards/viewtopic.php?f=7&amp;t=4448" class="postlink">Ahk e.g</a> | <a href="http://congsinh.net84.net/f/index.php?topic=31.0" class="postlink">Cheat Age 3</a> | <a href="http://congsinh.net84.net/f/index.php?topic=30.0" class="postlink">Cheat Plants vs Zombies 2</a><br></span></div>
+</div>
+</div>
+</div>
+<div class="back2top"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#top" class="top" title="Top">Top</a></div>
+</div>
+<div id="p28510" class="post has-profile bg1">
+<div class="inner">
+<dl class="postprofile resized" id="profile28510" style="z-index: 9; min-height: 296px;">
+<dt class="no-profile-rank has-avatar">
+<div class="avatar-container">
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=59119&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="avatar"><img class="avatar" src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/file(4).php" width="50" height="50" alt="User avatar"></a>
+</div>
+<a href="https://autohotkey.com/boards/memberlist.php?mode=viewprofile&amp;u=59119&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="username">berban</a>
+</dt>
+<dd class="profile-posts"><strong>Posts:</strong> <a href="https://autohotkey.com/boards/search.php?author_id=59119&amp;sr=posts&amp;sid=4f3ca0904763fcc945879057ce206f7e">44</a></dd>
+<dd class="profile-joined"><strong>Joined:</strong> 14 Apr 2014</dd>
+</dl>
+<div class="postbody">
+<div id="post_content28510">
+<h3><a href="https://autohotkey.com/boards/viewtopic.php?t=50#p28510">Make default ahk editor (via "edit" context menu in explorer</a></h3>
+<ul class="post-buttons">
+<li>
+<a href="https://autohotkey.com/boards/posting.php?mode=quote&amp;f=60&amp;p=28510&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Reply with quote" class="button icon-button quote-icon"><span>Quote</span></a>
+</li>
+<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+<p class="author"><a href="https://autohotkey.com/boards/viewtopic.php?p=28510&amp;sid=4f3ca0904763fcc945879057ce206f7e#p28510">18 Oct 2014, 22:40</a></p>
+<div class="content">When SciTE4AutoHotkey installs, there's a prompt to ask if you want to set it as the default ahk editor. This means ahk files will open in SciTE instead of notepad when you right click &gt; edit in windows explorer, or when you use the "Edit" command in ahk.<br><br>I changed the following keys in the registry to mimic this behavior. I'm not sure what the difference between the two is but I changed both for good measure.<br><div class="codebox codebox_plus"><p>Code: <a href="https://autohotkey.com/boards/viewtopic.php?t=50#" onclick="codebox_plus_select(this); return false;">[Select all]</a>&nbsp;<a href="https://autohotkey.com/boards/codeboxplus/download/28510-1?sid=4f3ca0904763fcc945879057ce206f7e" onclick="window.open(this.href); return false;">[Download]</a> <span class="codebox_plus_about"><a href="http://qbnz.com/highlighter/" target="_blank">GeSHi</a> © <a href="https://github.com/ahkscript/phpBB-Extension-Codebox-Plus" target="_blank">Codebox Plus</a></span></p><code><pre class="autohotkey">Computer\HKEY_CLASSES_ROOT\AutoHotkeyScript\Shell\Edit\Command<br>Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Classes\AutoHotkeyScript\Shell\Edit\Command</pre></code></div><br>But do you know of any more user friendly way to accomplish this?<br><br>Also... I have been unable to get the autocomplete to work. It only completes words that have been previously entered. I followed the steps in the first post - AutoHotkey.xml is in the right dir, the autocomplete setting is checked. Any ideas? :S</div>
+</div>
+</div>
+</div>
+<div class="back2top"><a href="https://autohotkey.com/boards/viewtopic.php?t=50#top" class="top" title="Top">Top</a></div>
+</div>
+<form id="viewtopic" method="post" action="https://autohotkey.com/boards/viewtopic.php?f=60&amp;t=50&amp;sid=4f3ca0904763fcc945879057ce206f7e">
+<fieldset class="display-options" style="margin-top: 0; ">
+<label>Display posts from previous: <select name="st" id="st"><option value="0" selected="selected">All posts</option><option value="1">1 day</option><option value="7">7 days</option><option value="14">2 weeks</option><option value="30">1 month</option><option value="90">3 months</option><option value="180">6 months</option><option value="365">1 year</option></select></label>
+<label>Sort by <select name="sk" id="sk"><option value="a">Author</option><option value="t" selected="selected">Post time</option><option value="s">Subject</option></select></label> <label><select name="sd" id="sd"><option value="a" selected="selected">Ascending</option><option value="d">Descending</option></select></label>
+<input type="submit" name="sort" value="Go" class="button2">
+</fieldset>
+</form>
+<hr>
+<div class="action-bar bottom">
+<div class="buttons">
+<a href="https://autohotkey.com/boards/posting.php?mode=reply&amp;f=60&amp;t=50&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="button icon-button reply-icon" title="Post a reply">Post <strong>Reply</strong></a>
+</div>
+<div class="dropdown-container dropdown-button-control topic-tools">
+<span title="Topic tools" class="button icon-button tools-icon dropdown-trigger dropdown-select dropdown-toggle"></span>
+<div class="dropdown hidden">
+<div class="pointer"><div class="pointer-inner"></div></div>
+<ul class="dropdown-contents">
+ <li class="small-icon icon-sendemail"><a href="https://autohotkey.com/boards/memberlist.php?mode=email&amp;t=50&amp;sid=4f3ca0904763fcc945879057ce206f7e" title="Email topic">Email topic</a></li> <li class="small-icon icon-print"><a href="https://autohotkey.com/boards/viewtopic.php?f=60&amp;t=50&amp;sid=4f3ca0904763fcc945879057ce206f7e&amp;view=print" title="Print view" accesskey="p">Print view</a></li> </ul>
+</div>
+</div>
+<div class="pagination">
+101 posts
+<ul>
+<li class="active"><span>1</span></li>
+<li><a href="https://autohotkey.com/boards/viewtopic.php?f=60&amp;t=50&amp;sid=4f3ca0904763fcc945879057ce206f7e&amp;start=20" role="button">2</a></li>
+<li><a href="https://autohotkey.com/boards/viewtopic.php?f=60&amp;t=50&amp;sid=4f3ca0904763fcc945879057ce206f7e&amp;start=40" role="button">3</a></li>
+<li><a href="https://autohotkey.com/boards/viewtopic.php?f=60&amp;t=50&amp;sid=4f3ca0904763fcc945879057ce206f7e&amp;start=60" role="button">4</a></li>
+<li><a href="https://autohotkey.com/boards/viewtopic.php?f=60&amp;t=50&amp;sid=4f3ca0904763fcc945879057ce206f7e&amp;start=80" role="button">5</a></li>
+<li><a href="https://autohotkey.com/boards/viewtopic.php?f=60&amp;t=50&amp;sid=4f3ca0904763fcc945879057ce206f7e&amp;start=100" role="button">6</a></li>
+<li class="next"><a href="https://autohotkey.com/boards/viewtopic.php?f=60&amp;t=50&amp;sid=4f3ca0904763fcc945879057ce206f7e&amp;start=20" rel="next" role="button">Next</a></li>
+</ul>
+</div>
+<div class="clear"></div>
+</div>
+<p class="jumpbox-return"><a href="https://autohotkey.com/boards/viewforum.php?f=60&amp;sid=4f3ca0904763fcc945879057ce206f7e" class="left-box arrow-left" accesskey="r">Return to “Editors”</a></p>
+<div class="dropdown-container dropdown-container-right dropdown-up dropdown-left dropdown-button-control" id="jumpbox">
+<span title="Jump to" class="dropdown-trigger button dropdown-select dropdown-toggle">
+Jump to </span>
+<div class="dropdown hidden">
+<div class="pointer"><div class="pointer-inner"></div></div>
+<ul class="dropdown-contents">
+<li><a href="https://autohotkey.com/boards/viewforum.php?f=1&amp;sid=4f3ca0904763fcc945879057ce206f7e">AutoHotkey Foundation</a></li>
+<li>&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=2&amp;sid=4f3ca0904763fcc945879057ce206f7e">About This Community</a></li>
+<li>&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=3&amp;sid=4f3ca0904763fcc945879057ce206f7e">Forum Issues</a></li>
+<li><a href="https://autohotkey.com/boards/viewforum.php?f=4&amp;sid=4f3ca0904763fcc945879057ce206f7e">AutoHotkey</a></li>
+<li>&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=5&amp;sid=4f3ca0904763fcc945879057ce206f7e">Ask For Help</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=18&amp;sid=4f3ca0904763fcc945879057ce206f7e">Gaming</a></li>
+<li>&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=6&amp;sid=4f3ca0904763fcc945879057ce206f7e">Scripts and Functions</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=19&amp;sid=4f3ca0904763fcc945879057ce206f7e">Gaming</a></li>
+<li>&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=7&amp;sid=4f3ca0904763fcc945879057ce206f7e">Tutorials</a></li>
+<li>&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=13&amp;sid=4f3ca0904763fcc945879057ce206f7e">Wish List</a></li>
+<li>&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=14&amp;sid=4f3ca0904763fcc945879057ce206f7e">Bug Reports</a></li>
+<li>&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=37&amp;sid=4f3ca0904763fcc945879057ce206f7e">AutoHotkey v2 Development</a></li>
+<li>&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=65&amp;sid=4f3ca0904763fcc945879057ce206f7e">AutoHotkey_H</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=67&amp;sid=4f3ca0904763fcc945879057ce206f7e">Ask For Help</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=66&amp;sid=4f3ca0904763fcc945879057ce206f7e">Development</a></li>
+<li>&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=24&amp;sid=4f3ca0904763fcc945879057ce206f7e">Announcements</a></li>
+<li>&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=60&amp;sid=4f3ca0904763fcc945879057ce206f7e">Editors</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=62&amp;sid=4f3ca0904763fcc945879057ce206f7e">AHK Studio</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=63&amp;sid=4f3ca0904763fcc945879057ce206f7e">Pulovers Macro Creator</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=61&amp;sid=4f3ca0904763fcc945879057ce206f7e">SciTE4AutoHotkey</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=64&amp;sid=4f3ca0904763fcc945879057ce206f7e">AutoGUI</a></li>
+<li><a href="https://autohotkey.com/boards/viewforum.php?f=16&amp;sid=4f3ca0904763fcc945879057ce206f7e">General</a></li>
+<li>&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=22&amp;sid=4f3ca0904763fcc945879057ce206f7e">Other Utilities &amp; Resources</a></li>
+<li>&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=23&amp;sid=4f3ca0904763fcc945879057ce206f7e">Other Programming Languages</a></li>
+<li>&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=17&amp;sid=4f3ca0904763fcc945879057ce206f7e">Offtopic</a></li>
+<li><a href="https://autohotkey.com/boards/viewforum.php?f=38&amp;sid=4f3ca0904763fcc945879057ce206f7e">Other languages</a></li>
+<li>&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=8&amp;sid=4f3ca0904763fcc945879057ce206f7e">Deutsch (German)</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=9&amp;sid=4f3ca0904763fcc945879057ce206f7e">Ich brauche Hilfe</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=20&amp;sid=4f3ca0904763fcc945879057ce206f7e">Spiele</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=10&amp;sid=4f3ca0904763fcc945879057ce206f7e">Skripte und Funktionen</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=11&amp;sid=4f3ca0904763fcc945879057ce206f7e">Tutorials</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=15&amp;sid=4f3ca0904763fcc945879057ce206f7e">Tooltime</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=12&amp;sid=4f3ca0904763fcc945879057ce206f7e">Allgemeines</a></li>
+<li>&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=26&amp;sid=4f3ca0904763fcc945879057ce206f7e">中文 (Chinese)</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=27&amp;sid=4f3ca0904763fcc945879057ce206f7e">请求帮助</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=28&amp;sid=4f3ca0904763fcc945879057ce206f7e">脚本函数</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=29&amp;sid=4f3ca0904763fcc945879057ce206f7e">教程资料</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=30&amp;sid=4f3ca0904763fcc945879057ce206f7e">相关工具</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=31&amp;sid=4f3ca0904763fcc945879057ce206f7e">其他</a></li>
+<li>&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=39&amp;sid=4f3ca0904763fcc945879057ce206f7e">Español (Spanish)</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=40&amp;sid=4f3ca0904763fcc945879057ce206f7e">Pedir Ayuda</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=41&amp;sid=4f3ca0904763fcc945879057ce206f7e">Automatización de Juegos</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=42&amp;sid=4f3ca0904763fcc945879057ce206f7e">Scripts y Funciones</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=43&amp;sid=4f3ca0904763fcc945879057ce206f7e">Tutoriales</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=44&amp;sid=4f3ca0904763fcc945879057ce206f7e">Otras Utilidades y Recursos</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=45&amp;sid=4f3ca0904763fcc945879057ce206f7e">General</a></li>
+<li>&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=46&amp;sid=4f3ca0904763fcc945879057ce206f7e">Русский (Russian)</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=47&amp;sid=4f3ca0904763fcc945879057ce206f7e">Помощь</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=52&amp;sid=4f3ca0904763fcc945879057ce206f7e">Скрипты для Игр</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=48&amp;sid=4f3ca0904763fcc945879057ce206f7e">Скрипты и библиотеки</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=49&amp;sid=4f3ca0904763fcc945879057ce206f7e">Статьи и руководства</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=50&amp;sid=4f3ca0904763fcc945879057ce206f7e">Прочие ресурсы и ПО.</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=51&amp;sid=4f3ca0904763fcc945879057ce206f7e">Свободное общение</a></li>
+<li>&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=54&amp;sid=4f3ca0904763fcc945879057ce206f7e">Français (French)</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=55&amp;sid=4f3ca0904763fcc945879057ce206f7e">J'ai besoin d'aide</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=56&amp;sid=4f3ca0904763fcc945879057ce206f7e">Scripts et Fonctions</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=57&amp;sid=4f3ca0904763fcc945879057ce206f7e">Tutoriels</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=58&amp;sid=4f3ca0904763fcc945879057ce206f7e">Autres Utilitaires et Ressources</a></li>
+<li>&nbsp; &nbsp;&nbsp; &nbsp;<a href="https://autohotkey.com/boards/viewforum.php?f=59&amp;sid=4f3ca0904763fcc945879057ce206f7e">Hors Sujet</a></li>
+</ul>
+</div>
+</div>
+<div class="stat-block online-list">
+<h3>Who is online</h3>
+<p>Users browsing this forum: No registered users and 1 guest</p>
+</div>
+</div>
+<div class="navbar" role="navigation">
+<div class="inner">
+<ul id="nav-footer" class="linklist bulletin" role="menubar">
+<li class="small-icon icon-home breadcrumbs">
+<span class="crumb"><a href="https://autohotkey.com/" data-navbar-reference="home" title="Home">Home</a></span>
+<span class="crumb"><a href="https://autohotkey.com/boards/index.php?sid=4f3ca0904763fcc945879057ce206f7e" data-navbar-reference="index" title="Board index">Board index</a></span>
+</li>
+<li class="responsive-menu hidden rightside dropdown-container"><a href="javascript:void(0);" class="responsive-menu-link dropdown-toggle">&nbsp;</a><div class="dropdown hidden"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li><li class="rightside">All times are <abbr title="UTC-5">UTC-05:00</abbr></li>
+<li class="small-icon icon-delete-cookies rightside"><a href="https://autohotkey.com/boards/ucp.php?mode=delete_cookies&amp;sid=4f3ca0904763fcc945879057ce206f7e" data-ajax="true" data-refresh="true" role="menuitem">Delete all board cookies</a></li>
+<li class="small-icon icon-team rightside" data-last-responsive="true"><a href="https://autohotkey.com/boards/memberlist.php?mode=team&amp;sid=4f3ca0904763fcc945879057ce206f7e" role="menuitem">The team</a></li>
+<li class="small-icon icon-contact rightside" data-last-responsive="true"><a href="https://autohotkey.com/boards/memberlist.php?mode=contactadmin&amp;sid=4f3ca0904763fcc945879057ce206f7e" role="menuitem">Contact us</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="page-footer" class="page-width" role="contentinfo">
+<div class="copyright">
+Powered by <a href="https://www.phpbb.com/">phpBB</a>® Forum Software © phpBB Limited
+<br>Style by <a href="http://www.artodia.com/">Arty</a>
+</div>
+<div id="darkenwrapper" data-ajax-error-title="AJAX error" data-ajax-error-text="Something went wrong when processing your request." data-ajax-error-text-abort="User aborted request." data-ajax-error-text-timeout="Your request timed out; please try again." data-ajax-error-text-parsererror="Something went wrong with the request and the server returned an invalid reply.">
+<div id="darken">&nbsp;</div>
+</div>
+<div id="loading_indicator"></div>
+<div id="phpbb_alert" class="phpbb_alert" data-l-err="Error" data-l-timeout-processing-req="Request timed out.">
+<a href="https://autohotkey.com/boards/viewtopic.php?t=50#" class="alert_close"></a>
+<h3 class="alert_title">&nbsp;</h3><p class="alert_text"></p>
+</div>
+<div id="phpbb_confirm" class="phpbb_alert">
+<a href="https://autohotkey.com/boards/viewtopic.php?t=50#" class="alert_close"></a>
+<div class="alert_text"></div>
+</div>
+</div>
+<div>
+<a id="bottom" class="anchor" accesskey="z"></a>
+</div>
+<script type="text/javascript" src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/jquery.min.js.download"></script>
+<script type="text/javascript" src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/core.js.download"></script>
+<script>
+
+(function($) {  // Avoid conflicts with other libraries
+
+'use strict';
+
+$.fn.extend({
+	borderHover: function() {
+		return this.each(function() {
+			$(this).css({
+				'border': 'solid 3px transparent',
+				'transition': 'border-color 0.1s ease-out',
+				'border-radius': '6px',
+				'cursor': 'pointer'
+			}).hover(function() {
+				$(this).css('border-color', '#4ae');
+			}, function() {
+				$(this).css('border-color', 'transparent');
+			});
+		});
+	}
+});
+
+$(function() {
+	var resizeWidth = 768,
+		targetImage = $('.postimage'),
+		galleryName = 'post-gallery',
+		imagesIndex = 0,
+		mobileWidth = 900;
+			targetImage = targetImage.not(function() {
+			return $(this).closest('.signature').length > 0;
+		});
+		if (resizeWidth > 0 && $(window).width() > mobileWidth) {
+		targetImage.css('max-width', resizeWidth + 'px');
+	} else {
+		return;
+	}
+	// enclosing the following in a setTimeout seems to solve issues with
+	// images not being ready and causing $(this).width() to return 0.
+	setTimeout(function() {
+		targetImage.one('load', function() {
+			if ($(this).closest('.postlink').length > 0) return;
+			imagesIndex = (1) ? '' : imagesIndex + 1;
+			if ($(this).parent('a').length > 0) {
+				if ($(this).outerWidth() >= resizeWidth) {
+					$(this).parent('a').attr({
+						'data-lightbox': galleryName + imagesIndex,
+						'data-title': $(this).attr('alt')
+					}).end().borderHover();
+				}
+			}
+			else if ($(this).outerWidth() >= resizeWidth) {
+				$(this).wrap(function() {
+					var url = $(this).attr('src');
+					return $('<a/>').attr({
+						'href': url,
+						'data-lightbox': galleryName + imagesIndex,
+						'data-title': (url.indexOf('download/file.php') !== -1) ? $(this).attr('alt') : url.split('/').pop()
+					});
+				}).borderHover();
+			}
+		}).each(function() {
+			if (this.complete) $(this).load();
+		});
+	}, 0);
+});
+
+})(jQuery);
+
+</script>
+<script type="text/javascript" src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/forum_fn.js.download"></script>
+<script type="text/javascript" src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/ajax.js.download"></script>
+<script type="text/javascript" src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/highlightsolved.js.download"></script>
+<script type="text/javascript" src="./Setup Notepad++ for AutoHotkey - AutoHotkey Community_files/lightbox.min.js.download"></script>
+
+
+<div id="lightboxOverlay" class="lightboxOverlay" style="display: none;"></div><div id="lightbox" class="lightbox" style="display: none;"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="https://autohotkey.com/boards/viewtopic.php?t=50"><div class="lb-nav"><a class="lb-prev" href="https://autohotkey.com/boards/viewtopic.php?t=50"></a><a class="lb-next" href="https://autohotkey.com/boards/viewtopic.php?t=50"></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div></body></html>
